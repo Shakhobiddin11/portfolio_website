@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #12032a, #000);
+    overflow: hidden;
+    color: #fff;
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.8), #12032a);
+    overflow: hidden;
+}
+
+.background::after {
+    content: '';
+    position: absolute;
+    width: 180%;
+    height: 180%;
+    background: conic-gradient(from 180deg, #a34eff, #4aefff, #ff5ac1, #a34eff);
+    animation: rotateGlow 12s linear infinite;
+    opacity: 0.2;
+    transform: rotate(0deg);
+    top: -40%;
+    left: -40%;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-box {
+    background: rgba(20, 20, 50, 0.95);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 0 25px rgba(163, 78, 255, 0.5), 0 0 50px rgba(74, 239, 255, 0.3);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 400px;
+}
+
+.login-box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 250%;
+    height: 250%;
+    background: conic-gradient(from 90deg, #a34eff, #4aefff, #ff5ac1, #a34eff);
+    animation: rotateBoxGlow 15s linear infinite;
+    z-index: -1;
+    opacity: 0.05;
+    border-radius: 50%;
+}
+
+h2 {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(163, 78, 255, 0.7);
+}
+
+
+.input-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 8px rgba(74, 239, 255, 0.5), inset 0 0 12px rgba(74, 239, 255, 0.5);
+}
+
+.input-container input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(74, 239, 255, 0.7), inset 0 0 18px rgba(74, 239, 255, 0.7);
+    transform: scale(1.03);
+}
+
+.glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    pointer-events: none;
+    box-shadow: 0 0 12px rgba(163, 78, 255, 0.3);
+    animation: pulse 2.5s infinite alternate;
+}
+
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.options a {
+    color: #4aefff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.options a:hover {
+    color: #ff5ac1;
+}
+
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #a34eff, #ff5ac1);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    box-shadow: 0 0 18px rgba(163, 78, 255, 0.7);
+}
+
+button:hover {
+    background: linear-gradient(to left, #a34eff, #ff5ac1);
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(163, 78, 255, 0.9), 0 0 45px rgba(74, 239, 255, 0.7);
+}
+
+
+.register-link {
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 12px rgba(163, 78, 255, 0.3); }
+    100% { box-shadow: 0 0 20px rgba(163, 78, 255, 0.7); }
+}
+
+@keyframes rotateGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotateBoxGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
